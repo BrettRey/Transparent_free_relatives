@@ -1,0 +1,340 @@
+% sem-syn-revised.tex
+% Draft for Jongbok Kim — January 2026
+% !TEX TS-program = xelatex
+\documentclass[12pt,letterpaper]{article}
+
+% House style typography
+\input{.house-style/preamble.tex}
+
+% Additional packages for this paper
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{langsci-avm}
+
+% ORCID (linked icon with fallback)
+\IfFileExists{orcidlink.sty}{%
+  \usepackage{orcidlink}%
+  \newcommand{\AuthorWithORCID}[2]{#1\,\orcidlink{#2}}%
+}{%
+  \newcommand{\AuthorWithORCID}[2]{\href{https://orcid.org/#2}{#1}}%
+}
+\newcommand{\myorcid}{0000-0003-0073-7195}
+
+% Paper-specific macros
+\newcommand{\tfr}{\textsc{tfr}}
+\newcommand{\sfr}{\textsc{sfr}}
+\newcommand{\hpc}{\textsc{hpc}}
+\newcommand{\syn}{\textsc{syn}}
+\newcommand{\sem}{\textsc{sem}}
+
+% ~-- ~-- ~-- - Title ~-- ~-- ~-- -
+\title{Separating Semantic and Morphosyntactic Clusters:\\A Note on Transparent Free Relatives}
+\author{\AuthorWithORCID{Brett Reynolds}{\myorcid}\\[4pt]
+Humber Polytechnic \& University of Toronto}
+\date{Draft for discussion~-- January 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This note proposes a diagnostic refinement for \tfr{} analysis: explicitly distinguishing morphosyntactic constraints (which project distributional generalizations) from semantic/pragmatic constraints (which project interpretive generalizations). The \textsc{sbcg} formalism already separates these in the typed feature geometry; my concern is that several \textit{informal claims and diagnostic arguments} in the current analysis slide between them. Using the Homeostatic Property Cluster (\hpc{}) framework, I treat these as distinct-but-coupled natural kinds, each stabilized by the other. The payoffs are sharper diagnostic arguments, a refined treatment of conventional implicature as source attribution rather than hard-coded non-commitment, and a concrete programme of dissociation tests. A companion note applies the same framework to independent relative \mention{whose}.
+\end{abstract}
+
+\section{Introduction: The diagnostic hygiene problem}
+
+The core methodological claim of this note: don't let a single label quietly do two jobs.
+
+Your \tfr{} analysis uses terms like \enquote{definiteness}, \enquote{transparency}, and \enquote{nucleus} in ways that sometimes slide between morphosyntactic and semantic readings. In most cases this doesn't matter~-- the two profiles align. But at the boundaries, the conflation obscures which profile is doing the explanatory work, and it closes off empirical questions that the separation would open.
+
+Consider existential constructions. In \mention{There is what they call a foreigner at the door}, the \tfr{} is grammatical. Swap the nucleus: \textsuperscript{?}\mention{There is what they call the foreigner at the door}. The sentence degrades. But what constraint is violated? Not morphosyntactic deitality alone~-- definite \mention{there}-sentences exist with presentational or list readings (\mention{There's the guy I told you about}). Not semantic definiteness alone~-- the discourse-newness requirement of canonical existentials isn't identical to either. We may need three notions here: morphological deital marking, semantic definiteness (unique identifiability), and discourse-status licensing for existentials. A single label papers over the distinctions.
+
+This note proposes separating the profiles explicitly. Your formal \textsc{sbcg} machinery already distinguishes \syn{} and \sem{} in the typed feature geometry~-- I'm not suggesting architectural changes. My target is the informal prose and choice of diagnostics: places where the analysis treats coordination, \mention{there}-licensing, or agreement as if they diagnose a unified \enquote{category} when they actually probe different profiles.
+
+The framework I'll use is Boyd's Homeostatic Property Cluster theory \parencite{boyd1999}. The \hpc{} vocabulary is just a way of regimenting a familiar practice: separate the properties that support distributional generalizations from those that support interpretive ones, then ask where they come apart. Morphosyntactic and semantic categories are distinct \hpc{}s~-- stable configurations of co-occurring properties maintained by causal mechanisms. Each includes the other as a stabilizing mechanism: semantics helps maintain morphosyntactic coherence, and vice versa. But they remain distinct because they \textit{project} for different purposes: the syntactician's category supports distributional generalizations; the semanticist's supports meaning generalizations.
+
+The payoff isn't philosophical elegance; it's a concrete research programme. Bundled constraints don't just explain rarity; they predict \textit{where to look for counterexamples}. Counterexamples aren't nuisances~-- they're the data that tell you which part of the bundle is doing which work.
+
+
+\section{The framework: two coupled HPCs}
+
+\subsection{Field-relative projectibility}
+
+Consider \mention{Paris}. A syntactician classifies this as a \textsc{proper noun}~-- a morphosyntactic category defined by distributional properties (articleless in English, capitalized, resists pluralization in core uses). The syntactician is aware of the typical semantic properties of this category~-- it's a rigid designator, it designates a unique referent, etc.~-- but he considers them to be only a small part of the definition. A semanticist classifies the same expression as a \textsc{proper name}~-- with the semantic ideas that entails. The semanticist is aware of the typical morphosyntactic properties of this category~-- it's articleless, capitalized, etc.~-- but they don't occupy his attention.
+
+These aren't the same category. They overlap massively in extension, but they have different membership criteria (distributional vs.\ meaning-based), support different generalizations (syntactic distribution vs.\ truth conditions), and come apart at the edges (nicknames, converted common nouns, etc.).
+
+Following Goodman's notion of projectibility \parencite{goodman1955}, each category is \textit{stable for a purpose}~-- it supports reliable inductive inference within a domain. What makes a property cluster \enquote{project well} for syntactic purposes is that the homeostatic mechanisms maintaining it are sensitive to distributional regularities; what makes it project well for semantic purposes is that the mechanisms are sensitive to inferential and truth-conditional regularities. The syntactician's \enquote{proper noun} and the semanticist's \enquote{proper name} are both legitimate natural kinds, but they are \textit{field-relative}: natural for different fields of inquiry.
+
+\subsection{The HPC model}
+
+The Homeostatic Property Cluster framework, developed in philosophy of biology to handle \enquote{messy} natural kinds like species \parencite{boyd1991,boyd1999}, provides a formal way to characterize these categories. An \hpc{} kind is defined by:
+
+\begin{enumerate}
+    \item a \textbf{cluster of co-occurring properties} (no single property is necessary or sufficient),
+    \item \textbf{homeostatic mechanisms} that causally maintain the clustering, and
+    \item \textbf{fuzzy boundaries} and graded membership as a predicted consequence.
+\end{enumerate}
+
+\bigskip
+\noindent 
+Applied to linguistics:
+
+\paragraph{Morphosyntactic HPC.} A cluster of formal and distributional properties: morphological marking, syntactic position, agreement behavior, selection restrictions. The cluster is maintained by mechanisms including syntactic licensing, paradigmatic pressure, and~-- crucially~-- correlation with prototypical semantic functions.
+
+\paragraph{Semantic HPC.} A cluster of meaning and function properties: identifiability, familiarity, referent type, discourse status. The cluster is maintained by mechanisms including conceptual coherence, inferential utility, and~-- crucially~-- correlation with prototypical formal expression.
+
+\subsection{Mutual homeostasis}
+
+Each cluster can plausibly include the other as a stabilizer: recurrent form–meaning alignments make both the formal class and the interpretive function easier to learn and to maintain over time (in acquisition and in diachrony).
+
+The consequence: form and meaning will typically align, but the alignment is imperfect because the reinforcement isn't deterministic. Where form and meaning pull in different directions~-- weak definites, generics, proper names~-- the clusters diverge. The divergence isn't anomaly; it's the expected outcome of imperfect homeostasis.
+
+\subsection{A reusable comparison}
+
+Table~\ref{tab:semsyn} summarizes the distinction in a form that can be applied across constructions.
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.20\linewidth} p{0.36\linewidth} p{0.36\linewidth}}
+\toprule
+\textbf{Dimension} & \textbf{Morphosyntactic category} & \textbf{Semantic category} \\
+\midrule
+Profile purpose & Projects combinatorics and distribution & Projects interpretive and inferential behavior \\
+\addlinespace
+Stabilizers & Agreement, selection, constituency, positional regularities & Truth-conditional roles, CI/pragmatics, type-shifting patterns \\
+\addlinespace
+Primary diagnostics & Coordination, agreement, selectional fit, island sensitivity & Entailments, scope, anaphora resolution, felicity conditions \\
+\addlinespace
+Cross-domain supports & Semantic regularities can cue syntactic category & Morphosyntactic patterns can cue semantic type \\
+\addlinespace
+Failure mode if collapsed & Syntactic diagnostics overdetermine meaning & Semantic expectations overdetermine form \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of morphosyntactic and semantic categories.}
+\label{tab:semsyn}
+\end{table}
+
+
+\section{Case study: transparent free relatives}
+
+\subsection{What the analysis gets right}
+
+Your construction-based analysis captures several key properties elegantly:
+
+\begin{enumerate}
+    \item \textbf{Parenthetical function}: The \tfr{} clause (\mention{what they call}) is omissible without changing truth conditions.
+    \item \textbf{Nucleus determines morphosyntactic properties}: The predicative nucleus (\mention{a foreigner}) controls agreement and category, and tracks distributional effects relevant to deitality/\mention{there}-licensing (with semantic definiteness and discourse status as separable factors).
+    \item \textbf{Constructional constraints}: Two interacting constructions~-- the Transparent Free Relative Clause Construction and the \tfr{} Construction~-- license the structure.
+    \item \textbf{Projective meaning}: The construction contributes non-at-issue content commonly described in terms of non-speaker commitment; below I argue that the most stable generalization is \textit{source attribution / metalinguistic qualification}, with commitment effects derived pragmatically.
+\end{enumerate}
+
+\bigskip
+\noindent 
+The analysis places the nucleus as a sister to the free relative clause (rather than internal to it), which cleanly captures extraction possibilities, binding facts, and idiom integrity. The \textsc{sbcg} formalization is precise and empirically grounded.
+
+\subsection{Where diagnostics slide between profiles}
+
+Despite these strengths, several informal claims treat semantic and morphosyntactic categories as a unified profile, letting one do the work of both. These are framing compressions, not data errors, but they blur which profile is doing the explanatory work. I identify six representative points, with suggested rephrasings.
+
+\paragraph{1. Nucleus determination bundles distinct profiles.} The wh-phrase in \sfr{}s is described as the \enquote{syntactic and semantic nucleus}, and the \tfr{} nucleus is said to \enquote{determine the syntactic category and semantic properties of the entire construction}. This treats two \hpc{}s as one.
+
+\textit{Suggested:} \enquote{morphosyntactic nucleus; semantic profile is constructionally composed} (i.e., nucleus meaning + constructional CI + pragmatic licensing).
+
+\paragraph{2. Coordination diagnoses functional parallelism, not category.} Coordination is treated as a diagnostic for category identity. But coordination is sensitive to multiple constraints: functional parallelism, syntactic category, and semantic compatibility. These don't always align. So coordination cannot by itself settle which \textit{profile} is inherited~-- it shows functional parallelism; category and semantic type require independent argumentation.
+
+\textit{Suggested:} Treat coordination as evidence for functional parallelism; note that category match and semantic compatibility are independently motivated.
+
+\paragraph{3. Existential licensing is discourse-status, not semantic definiteness.} \enquote{The nucleus's definiteness determines grammaticality} in existentials. This folds semantic definiteness (identifiability, uniqueness, familiarity) into morphosyntactic deitality (\mention{there}-resistance, form-class membership) into discourse-status licensing (presentational/new-information requirement). The three can diverge: weak definites are deital but indefinite-like semantically; definite \mention{there}-sentences exist with presentational readings. (Discourse-status licensing is part of the semantic/pragmatic profile~-- or interface profile~-- but crucially does not reduce to semantic definiteness or morphosyntactic deitality.)
+
+\textit{Suggested:} \enquote{The nucleus's morphosyntactic and discourse-status properties control \mention{there}-licensing; semantic definiteness patterns may align but are independently motivated.}
+
+\paragraph{4. Underspecification has to distinguish syntactic from semantic resolution.} \mention{What} is described as \enquote{categorially and semantically underspecified}. The wording bundles syntactic underspecification with semantic type underspecification. Syntactic underspecification allows \mention{what} to unify with any predicative category; semantic type resolution is a separate process driven by the nucleus and the constructional CI.
+
+\textit{Suggested:} \enquote{syntactically underspecified; semantic type resolved by the predicative nucleus and construction}.
+
+\paragraph{5. Nucleus determines morphosyntax, not semantic projection.} \enquote{The nucleus determines phrase-level properties.} This is morphosyntactic headship, but the phrasing invites a semantic-projection reading. Semantic effects come from the construction plus nucleus, not from the nucleus alone.
+
+\textit{Suggested:} \enquote{the nucleus determines morphosyntactic properties; semantic projection is licensed constructionally}.
+
+\paragraph{6. Verb inventory reflects coupled constraints.} The paper identifies verbs that occur in \tfr{}s as those selecting predicative complements and expressing non-speaker commitment. This is naturally analyzed as two coupled constraints~-- one morphosyntactic (predicative selection), one semantic (epistemic hedging). The separation predicts a $2\times2$ matrix of possibilities:
+\begin{enumerate}
+    \item \textbf{Selects predicative, allows hedging} (\mention{call}, \mention{consider}): Canonical \tfr{} verbs.
+    \item \textbf{Selects predicative, no hedging} (\mention{be}, \mention{become}): Prediction: Should fail if the CI is obligatory, or require a different constructional meaning.
+    \item \textbf{No predicative selection, allows hedging} (\mention{guess}, \mention{suspect}): Prediction: Impossible in \tfr{} syntax despite semantic compatibility.
+    \item \textbf{Neither}: Impossible.
+\end{enumerate}
+
+\bigskip
+\noindent 
+These distinctions make the \enquote{coupled constraints} claim concrete and falsifiable.
+
+
+\section{The CI story needs refinement}
+
+\subsection{The problem with hard-coded non-commitment}
+
+Your analysis treats non-speaker-commitment as a stable constructional meaning. But the dissociation programme forces a harder question: does the CI survive when the source is the speaker?
+
+Consider \mention{what I call X} vs.\ \mention{what they call X}. When the speaker is the source, the utterance often functions not as hedging but as a naming or terminological move:
+
+\ea
+    \ea \mention{This is what I call the ``transparency effect''.}
+    \ex \mention{She's developed what I call a robust methodology.}
+\z
+\z
+
+In these cases, the speaker isn't distancing from the predication~-- they're \textit{claiming} it, often with metalinguistic emphasis. Conversely, other-source \tfr{}s can occur without distancing when the speaker fully endorses the label:
+
+\ea \mention{She won what the committee called ``Best in Show''~-- and rightly so.}
+\z
+
+If these patterns hold, then \enquote{non-speaker commitment} is too specific for the CI. A more defensible claim, consistent with work on projective content \parencite[cf.][]{potts2005,simons2010}:
+
+\begin{quote}
+The construction contributes projective, non-at-issue content best characterized as \textbf{source attribution / metalinguistic qualification}: who applies the predicate, or under what evidential standard. Speaker-commitment effects are a downstream pragmatic computation that depends on source, evidential verb, and discourse goals.
+\end{quote}
+
+This is a substantive refinement, not a minor rewording. It predicts that \tfr{}s with different source configurations will show different commitment profiles~-- testable via embedding and challenge tests.
+
+\subsection{A test programme for the CI}
+
+If the CI is source attribution rather than hard-coded non-commitment, we should find systematic variation along these dimensions:
+
+\begin{enumerate}
+    \item \textbf{Speaker-source vs.\ other-source}: \mention{what I call X} vs.\ \mention{what they call X}. Prediction: speaker-source licenses endorsement readings; other-source licenses distancing readings; the construction itself is neutral.
+    
+    \item \textbf{Evidential gradient}: \mention{what is said/reported/rumoured/known/claimed to be X}. Prediction: evidential strength modulates speaker commitment independently of source.
+    
+    \item \textbf{Predicative complement types}: AP vs.\ NP vs.\ PP vs.\ VP/gerundive (\mention{what we call picking corn} is in your data). Prediction: CI stability across complement types; if it varies, that's evidence for complement-specific effects.
+    
+    \item \textbf{Embedding beyond negation/conditionals}: questions (\mention{Is breast cancer what scientists call multifactorial?}), imperatives (\mention{Be what they call professional!}), metalinguistic negation. Prediction: CI projects in all environments if it's truly conventional; if it fails to project somewhere, that constrains the analysis.
+    
+    \item \textbf{Prosodic integration}: comma-parenthetical vs.\ prosodically integrated. Prediction: prosodic separation may strengthen the metalinguistic/hedging reading; integration may weaken it.
+\end{enumerate}
+
+\bigskip
+\noindent 
+\section{Two kinds of transparency}
+
+Once we separate the clusters, we can distinguish two senses in which \tfr{}s are \enquote{transparent}:
+
+\paragraph{Morphosyntactic transparency.} Formal features of the nucleus percolate to determine properties of the whole:
+\begin{itemize}
+    \item Agreement: \mention{\textup{[}What appear to be trousers\textup{]} \textbf{are} really leggings.}
+    \item Category selection: nucleus AP $\rightarrow$ whole functions as AP.
+    \item Deital licensing: indefinite nucleus $\rightarrow$ compatible with existentials.
+\end{itemize}
+
+\bigskip
+\noindent 
+This is feature unification in the syntax.
+
+\paragraph{Semantic transparency.} The nucleus contributes directly to truth conditions:
+\begin{itemize}
+    \item Referent: the \tfr{} refers to whatever the nucleus denotes.
+    \item Proposition: the matrix predicate applies to nucleus meaning.
+    \item CI: the \tfr{} clause adds source attribution but not truth-conditional content.
+\end{itemize}
+
+\bigskip
+\noindent 
+This is compositional semantics.
+
+\subsection{Why they typically align}
+
+In \tfr{}s, morphosyntactic and semantic transparency go together. This isn't coincidence but the result of coupling mechanisms:
+
+\begin{enumerate}
+    \item \textbf{Parenthetical syntax} creates a structural configuration where the clause is \enquote{backgrounded}, reducing its contribution to both formal features and truth conditions.
+    \item \textbf{Verb semantics} (\mention{seem}, \mention{call}, \mention{consider}) inherently express perspective or evidentiality, mediating between the proposition and speaker stance.
+    \item \textbf{Prosody} (parenthetical intonation, optional comma setting) reinforces the non-at-issue status both syntactically and semantically.
+\end{enumerate}
+
+\bigskip
+\noindent 
+These mechanisms explain why the two kinds of transparency cluster~-- and predict that they might come apart if the mechanisms are disrupted.
+
+\subsection{The dissociation prediction}
+
+If \syn{} and \sem{} transparency are genuinely distinct, we should expect to find edge cases where one succeeds without the other:
+
+\begin{itemize}
+    \item \textbf{Morphosyntactic transparency without semantic transparency}: Features percolate but truth conditions don't follow the nucleus. Possible test case: \tfr{}s with intensional verbs like \mention{what distinctively marks} or \mention{what theoretically constitutes}, where the nucleus's referent is world-dependent.
+    
+    \item \textbf{Semantic transparency without morphosyntactic transparency}: Nucleus contributes to truth conditions but features don't unify. Possible test case: category mismatches like \mention{*He is what they consider nice} (where \mention{nice} is semantically appropriate but fails the NP-gap requirement of \mention{what}).
+\end{itemize}
+
+\bigskip
+\noindent 
+These aren't rhetorical gestures. They're predictions. If we find them, the separation earns its keep; if we don't, we learn that the coupling is tighter than the framework suggests.
+
+
+\section{Revised SBCG analysis sketch}
+
+\subsection{The linking constraint as the key addition}
+
+Your formal analysis already separates \syn{} and \sem{} in the typed feature geometry. What the \hpc{} framework adds is a way to make the \textit{linking constraint}~-- how the predicative-complement semantics is compositionally tied to the [{\sc prd} +] configuration~-- explicit and central.
+
+The construction should encode:
+\begin{itemize}
+    \item A \syn{} constraint: gap + [{\sc prd} +] + head inheritance from nucleus.
+    \item A \sem{} constraint: property-ascription + attribution frame.
+    \item A \textbf{linking constraint}: the predicative-complement semantics is licensed by the [{\sc prd} +] configuration; the attribution CI is licensed by the verb's evidential/perspective semantics.
+\end{itemize}
+
+\bigskip
+\noindent 
+This is the \textsc{sbcg}-friendly version of \enquote{mutual homeostasis}: the linking constraint states how the syntactic and semantic requirements are causally connected, not just co-present. I'm not attempting a full alternative formalization here; the point is just to locate the coupling claim in an explicit form–meaning linkage (rather than in informal diagnostics that slide between profiles).
+
+\subsection{The transparent free relative clause construction}
+
+The first construction combines \mention{what} with an incomplete S:
+
+\begin{quote}
+\textit{Trans-Free-Rel-Cl} $\rightarrow$ \fbox{1} NP[\textsc{form} \mention{what}], S[\textsc{vform} fin, \textsc{gap} $\langle$\fbox{1} NP, \fbox{2} XP[\textsc{prd} +]$\rangle$]
+\end{quote}
+
+\noindent The resulting S has category \textit{tran-free-rel}, retains \fbox{2} XP on its {\sc gap} list, and introduces a {\sc sem.ci} value encoding source attribution for the embedded predication. The key point: {\sc syn.gap} specifies what has to be filled; {\sc sem.ci} specifies how the filling is interpreted.
+
+\subsection{The TFR construction}
+
+The second construction combines the transparent relative clause with its nucleus:
+
+\begin{quote}
+\textit{TFR-Cxt} $\rightarrow$ S[\textit{tran-free-rel}, \textsc{gap} $\langle$\fbox{1} XP$\rangle$], H \fbox{1} XP[\textsc{prd} +]
+\end{quote}
+
+\noindent The result inherits {\sc syn} features from the nucleus (the H daughter):
+
+\begin{itemize}
+    \item {\sc syn.cat} is identified with the nucleus category (morphosyntactic transparency).
+    \item {\sc sem.index} is the nucleus referent (semantic transparency).
+    \item {\sc sem.ci} encodes source attribution for the predication.
+\end{itemize}
+
+\bigskip
+\noindent 
+The linking constraint is implicit in the construction's form-meaning pairing: the [{\sc prd} +] requirement on the gap corresponds to the property-ascription semantics; the verb's selection of a predicative complement corresponds to the attribution frame.
+
+
+\section{Conclusion}
+
+The proposal: treat morphosyntactic and semantic categories as distinct-but-coupled \hpc{}s; adjust informal diagnostic claims to respect the distinction; refine the CI as source attribution rather than hard-coded non-commitment.
+
+The CI revision is where the separation pays off most. If the projective meaning is source attribution (in the family of evidential and perspective-marking constructions), then commitment is a pragmatic downstream effect that should vary predictably with source, evidential strength, and discourse goals. That prediction is testable.
+
+The payoffs are precision, mechanism, and testability. Precision: we can state constraints on form separately from constraints on meaning, and make their interaction explicit. Mechanism: the coupling between parenthetical syntax and attribution semantics is explained by homeostatic forces, not stipulated. Testability: the framework predicts dissociations and provides a programme for finding them.
+
+At the deepest level, both \tfr{}s and independent relative \mention{whose} (the subject of the companion note) are about \textit{underspecification and resolution}. In \mention{whose}, the possessum type is underspecified and has to be resolved from discourse. In \tfr{}s, the attribution frame~-- and thus the commitment profile~-- is underspecified and resolved from source, evidential verb, and discourse function. The \hpc{} framework makes this parallel visible: both constructions have a structurally guaranteed component and a discourse-dependent component, and the discourse-dependent component is where the action is.
+
+The broader methodological point: bundled constraints predict where to look for counterexamples. Counterexamples are not nuisances~-- they're the data that tell you which part of the bundle is doing which work. Trusting the bundle leads us to mistake the silence of the corpus for the prohibition of the grammar. We conflate what is merely \textit{improbable} (the convergence of separate licensing conditions) with what is structurally \textit{impossible}.
+
+\newpage
+\printbibliography
+
+\end{document}

@@ -1,0 +1,272 @@
+% whose-what-revised.tex
+% Companion to sem-syn-revised.tex — January 2026
+% !TEX TS-program = xelatex
+\documentclass[12pt,letterpaper]{article}
+
+% House style typography
+\input{.house-style/preamble.tex}
+
+% Additional packages (from sem-syn.tex)
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{langsci-avm}
+
+% ORCID (linked icon with fallback)
+\IfFileExists{orcidlink.sty}{%
+  \usepackage{orcidlink}%
+  \newcommand{\AuthorWithORCID}[2]{#1\,\orcidlink{#2}}%
+}{%
+  \newcommand{\AuthorWithORCID}[2]{\href{https://orcid.org/#2}{#1}}%
+}
+\newcommand{\myorcid}{0000-0003-0073-7195}
+
+% Paper-specific macros
+\newcommand{\tfr}{\textsc{tfr}}
+\newcommand{\hpc}{\textsc{hpc}}
+\newcommand{\syn}{\textsc{syn}}
+\newcommand{\sem}{\textsc{sem}}
+
+% Title
+\title{Two Cases, One Framework:\\Independent Relatives and the SYN/SEM Separation}
+\author{\AuthorWithORCID{Brett Reynolds}{\myorcid}\\[4pt]
+Humber Polytechnic \& University of Toronto}
+\date{Draft~-- January 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This companion note to \enquote{Separating Semantic and Morphosyntactic Clusters} applies the \hpc{} framework to a second case: independent relative \mention{whose}. Independent relative \mention{whose} is a ghost in the grammar: dismissed as impossible by casual introspection but stubbornly persistent in the corpus. This makes it a perfect test case for the diagnostic separation. In both cases, the licensing requirements decompose into a \syn{} component (structurally available) and a \sem{}/pragmatic component (discourse-accessibility). The parallel structure yields a reusable template: apparent paradigmatic gaps often reflect conjunctive licensing systems where one requirement is reliably satisfied by the construction's syntax while the other depends on discourse conditions that rarely converge. The rarity creates an illusion of categorical prohibition.
+\end{abstract}
+
+\section{Introduction: The shared pattern}
+
+The companion note proposes separating morphosyntactic and semantic constraints as distinct-but-coupled \hpc{}s. This note extends the framework to a second case: independent relative \mention{whose}.
+
+The parallel is instructive not because the constructions are identical, but because they instantiate the same \textit{diagnostic pattern}:
+
+\begin{enumerate}
+    \item A construction is dismissed as syntactically impossible based on constructed examples.
+    \item Corpus evidence reveals it exists, but rarely.
+    \item The licensing requirements decompose into two components: one structural (reliably satisfied by the construction's syntax), one discourse-dependent (satisfied only under specific information-structural conditions).
+    \item The conjunction of requirements is rare enough in ordinary discourse that introspection systematically misleads.
+\end{enumerate}
+
+\bigskip
+\noindent 
+The methodological lesson: bundled constraints don't just explain rarity; they predict \textit{where to look for counterexamples}. Counterexamples are the data that tell you which part of the bundle is doing which work.
+
+
+\section{The $\langle$whose$\rangle$ case}
+
+\subsection{The apparent gap}
+
+\textcite{Hankamer1973} claimed that English lacks independent relative \mention{whose}~-- that is, \mention{whose} without a following noun in relative clauses:
+
+\ea[*]{\mention{The guy whose you saw banging at the window is over there.}}
+\z
+
+This was puzzling because interrogative \mention{whose} can be independent (\mention{Whose is that?}), and other relative pronouns show no such restriction. But the constructed examples seemed clearly ungrammatical.
+
+\subsection{The corpus reality}
+
+Systematic corpus searches reveal that independent relative \mention{whose} has existed for seven centuries:
+
+\ea
+    \ea[]{\mention{the man whose these are} (1611)}
+    \ex[]{\mention{a friend of whose} (\textit{CGEL})}
+    \ex[]{\mention{I knew someone whose greatest love affair was with objects, another whose was with books.} (1997)}
+   \z
+\z
+
+\noindent These examples illustrate two distinct subtypes of the phenomenon. The second example shows the \textbf{oblique genitive configuration} (\mention{of whose}), where the relative clause modifies \mention{friend} and \mention{whose} lacks a following noun because of NP-ellipsis; the possessum type (`friend') is recoverable from the head NP. The third example shows \textbf{identity-of-sense stranding}: contrastive parallelism licenses the ellipsis, and the possessum type (`greatest love affair') is established by the first conjunct and recovered for the second. Despite their differences, both are unified by the same double-recovery bottleneck.
+
+The construction isn't absent~-- it's rare. And its rarity reflects specific licensing conditions, not syntactic prohibition.
+
+\subsection{Double anaphora as coupled constraints}
+
+Independent genitives impose a \enquote{double anaphora} requirement: the hearer has to recover both the possessor and the possessum. In \mention{my gorilla and yours}, the possessum type (gorilla) has to be accessible for \mention{yours} to succeed.
+
+The crucial insight is that these two recovery requirements map onto distinct profiles:
+
+\begin{enumerate}
+    \item \textbf{Possessor recoverability} (\syn{} side): The antecedent for \mention{whose} has to be identifiable from the local syntactic configuration. In headed relative clauses, this is \textit{normally supplied} by the head NP.
+    
+    \item \textbf{Possessum recoverability} (\sem{}/pragmatic side): The elided possessum \textit{type} has to be accessible in discourse. This is \textit{not} structurally guaranteed~-- it depends on information-structural conditions.
+\end{enumerate}
+
+\bigskip
+\noindent 
+The asymmetry explains why possessum recoverability is the bottleneck. The syntactic structure of relative clauses ensures the possessor is available; nothing in the syntax ensures the possessum type is salient.
+
+
+\section{The parallel to transparent free relatives}
+
+\subsection{A reusable template}
+
+The \tfr{} case has the same structure:
+
+\begin{enumerate}
+    \item \textbf{Morphosyntactic transparency} (\syn{} side): Features of the nucleus (category, agreement, deitality) percolate to determine phrase-level properties. This is \textit{structurally guaranteed} by the head-filler configuration.
+    
+    \item \textbf{Semantic transparency} (\sem{}/pragmatic side): The nucleus contributes to truth conditions; the clause contributes source attribution. This depends on \textit{verb semantics and discourse function}~-- not all verbs with predicative complements license the construction.
+\end{enumerate}
+
+\bigskip
+\noindent 
+Table~\ref{tab:parallel} makes the parallel explicit:
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.18\linewidth} p{0.38\linewidth} p{0.38\linewidth}}
+\toprule
+& \textbf{Independent relative \mention{whose}} & \textbf{Transparent free relatives} \\
+\midrule
+\syn{} requirement & Possessor link available in local structure (head NP) & Head-feature inheritance from nucleus ([{\sc prd} +] gap filled) \\
+\addlinespace
+Underspecified parameter to be resolved & Possessum type (requires discourse accessibility) & Attribution frame (requires evidential semantics) \\
+\addlinespace
+Structurally guaranteed? & \syn{}: yes; \sem{}: no & \syn{}: yes; \sem{}: partially (depends on verb inventory) \\
+\addlinespace
+Bottleneck & Possessum recoverability & Verb has to select predicative complement \textit{and} license hedging/attribution \\
+\addlinespace
+Licensing supports & Contrastive parallelism, structural integration, deictic anchoring & Parenthetical syntax, evidential verb semantics, prosodic backgrounding \\
+\bottomrule
+\end{tabular}
+\caption{Parallel structure of licensing requirements.}
+\label{tab:parallel}
+\end{table}
+
+In both cases: the \syn{} requirement is satisfied by the construction's syntax; the \sem{}/pragmatic requirement depends on discourse conditions that rarely converge. The rarity of the conjunction creates an illusion of categorical prohibition.
+
+\subsection{Why the parallel matters}
+
+The parallel isn't just a curiosity; it provides a reusable diagnostic template for investigating apparent paradigmatic gaps:
+
+\begin{enumerate}
+    \item \textbf{Decompose}: Identify the bundle of requirements. Which are structural? Which are discourse-dependent?
+    
+    \item \textbf{Identify the bottleneck}: Which requirement fails in the constructed examples that seem ungrammatical?
+    
+    \item \textbf{Predict licensing contexts}: What discourse conditions would satisfy the bottleneck requirement?
+    
+    \item \textbf{Search}: Look for attested examples in contexts that satisfy those conditions.
+\end{enumerate}
+
+\bigskip
+\noindent 
+This is the methodological payoff of the \hpc{} framework: it turns \enquote{this construction is impossible} into \enquote{under what conditions would both requirements be satisfied?}
+
+
+\section{The rarity illusion}
+
+\subsection{Why rare looks impossible}
+
+The multiplicative effect is severe. In the Corpus of Contemporary American English (\textsc{coca}), independent relative \mention{whose} appears on the order of single digits per 100 million words~-- extremely rare relative to all \mention{whose} tokens. This rarity makes the construction virtually absent from casual introspection.
+
+For independent relative \mention{whose}:
+\begin{itemize}
+    \item Independent genitives are already rare (a subset of genitive NPs).
+    \item Relative clauses are a further subset.
+    \item Possessum-type accessibility requires specific information-structural support.
+\end{itemize}
+
+\bigskip
+\noindent 
+The conjunction is vanishingly rare~-- but not zero. The corpus evidence shows it exists precisely where the information-structural conditions converge: contrastive enumeration, parallel structure, deictic anchoring.
+
+\subsection{Diachronic maintenance}
+
+The stronger claim from the full \mention{whose} paper is not just that the construction exists, but that its licensing ecology has become \textit{conventionalized in certain registers}. What changes over time is not \enquote{syntax starts allowing it} but \enquote{a stable licensing configuration becomes entrenched}.
+
+For identity-of-sense stranding (where the possessum type has to be recovered from prior discourse), the construction becomes clearly visible in my corpus sample only in the 1990s~-- after contrastive enumeration becomes a stable academic-prose schema. The discourse schema provides the information-structural support; once speakers encounter the construction in that context, it becomes an active option.
+
+This is the \enquote{maintenance view}: rare constructions are precarious. They persist only where a discourse ecology reliably satisfies the bottleneck requirement. The \hpc{} framework predicts this: the coupling between \syn{} and \sem{} requirements is maintained by usage patterns, not by the grammar alone.
+
+
+\section{Tying $\langle$whose$\rangle$ to deitality}
+
+\subsection{Possessum recoverability as accessibility}
+
+The semantic side of the \mention{whose} constraint~-- possessum recoverability~-- is extremely close to the accessibility conditions that govern deitality. In my analysis of definiteness/deitality \parencite{reynolds-deitality}, deitality involves \enquote{can the hearer retrieve the intended referent/restrictor?} For independent genitives, the question is: \enquote{can the hearer retrieve the intended possessum type?}
+
+Both are accessibility conditions at the syntax--discourse interface. Both require the hearer to resolve an underspecified element by recruiting discourse context. And both create the same diagnostic pattern: constructions that appear impossible when the accessibility condition fails, but become grammatical when the context provides the required support.
+
+\subsection{A unified interface phenomenon}
+
+If this is right, then \mention{whose} and \tfr{}s are not two unrelated curiosities but instances of a general interface phenomenon:
+
+\begin{quote}
+Constructions with underspecified elements require discourse accessibility for resolution. When accessibility is high, the construction succeeds; when accessibility is low, the construction fails. The failure is pragmatic, not syntactic~-- but pragmatic failure is hard to distinguish from syntactic prohibition via introspection.
+\end{quote}
+The \hpc{} framework makes this explicit: the \sem{}/pragmatic requirement is a cluster of accessibility conditions maintained by discourse regularities. The \syn{} requirement is a cluster of structural conditions maintained by the grammar. The coupling between them is imperfect, and the imperfection creates the illusion of gaps.
+
+
+\section{Methodological Implications}
+
+Both cases illustrate the same methodological lesson: reliance on constructed examples can mistake pragmatic constraints for syntactic prohibitions.
+
+\begin{itemize}
+    \item For \mention{whose}: Constructed examples systematically failed possessum recoverability, creating the illusion of categorical ungrammaticality.
+    \item For \tfr{}s: Standard examples bundle morphosyntactic and semantic transparency, obscuring the possibility of dissociation.
+\end{itemize}
+
+\bigskip
+\noindent 
+The remedy is the same in both cases:
+
+\begin{enumerate}
+    \item \textbf{Decompose the bundle}: Identify which requirements are structural and which are discourse-dependent.
+    \item \textbf{Construct examples that satisfy the bottleneck}: Don't just test random examples; construct examples where the discourse conditions are optimized.
+    \item \textbf{Search corpora for naturalistic attestation}: Rare constructions appear in rare discourse configurations; the corpus is the only way to find them.
+    \item \textbf{Test cross-linguistically}: If the constraint is pragmatic, languages with different syntax should show the same pattern; if it's syntactic, they shouldn't.
+\end{enumerate}
+
+\bigskip
+\noindent 
+For \mention{whose}, cross-linguistic evidence from German and Japanese confirms the prediction. German shows the same contrast between licensed and unlicensed contexts:
+
+\ea 
+\gll Meins funktionierte, aber ich kenne jemanden, [dessen nicht funktionierte].\\
+mine worked but I know someone whose not worked\\
+\glt `Mine was working, but I know someone whose wasn't.'
+\z
+
+\noindent The contrastive parallelism (\mention{meins}~\ldots~\mention{dessen}) makes the possessum type (`device/thing that functions') recoverable. Without such support, independent relative \mention{dessen} is degraded.
+
+Japanese, despite its head-final structure and lack of relative pronouns, shows remarkably similar patterns: independent genitives are vanishingly rare in corpora but become acceptable when contrastive or deictic support ensures possessum-type accessibility.
+
+The convergence is striking: the \textit{same bottleneck type} (possessum-type accessibility) with different syntactic machinery. This confirms that the constraint is at the syntax--discourse interface, not in the syntax proper.
+
+\section{Testable predictions}
+
+If the \syn{}/\sem{} decomposition is correct, it should have empirical signatures. Most directly: \syn{} violations (e.g., \mention{whose} in a configuration that doesn't provide a possessor link) should feel \enquote{ungrammatical}, while \sem{} violations (e.g., \mention{whose} with possessor available but possessum inaccessible) should feel \enquote{pragmatically odd} or \enquote{incomplete}~-- different degradation profiles for different constraint failures. This is testable via acceptability judgment studies with controlled manipulation of each requirement.
+
+More speculatively, if possessum recoverability is a real-time accessibility computation, it should produce measurable processing costs; and if \syn{} and \sem{} are acquired as distinct constraints, children might initially overextend independent genitives before retreating to adult-like restrictions. These are predictions for future work, not claims I'm defending here.
+
+
+\section{Conclusion}
+
+The \hpc{} framework proposed for \tfr{}s generalizes. Independent relative \mention{whose} provides a second instantiation: what appears to be a syntactic gap is really the failure of one component in a coupled system.
+
+At the deepest level, both cases are about \textit{underspecification and resolution}. In \mention{whose}, the possessum type is underspecified and has to be resolved from discourse. In \tfr{}s, the attribution frame~-- and thus the commitment profile~-- is underspecified and resolved from source, evidential verb, and discourse function. The reusable template:
+
+\begin{itemize}
+    \item \syn{} requirement: structurally available in the construction's syntax.
+    \item \sem{}/pragmatic requirement: depends on discourse accessibility for resolution.
+    \item Bottleneck: the discourse-dependent requirement, which rarely converges.
+    \item Illusion: the rarity of the conjunction looks like categorical prohibition.
+\end{itemize}
+
+\bigskip
+\noindent The broader lesson: before concluding that a construction doesn't exist, ask what information-structural conditions might be required for it to succeed. Bundled constraints predict where to look for counterexamples~-- and counterexamples are the data that tell you how the grammar actually works.
+
+\newpage
+\printbibliography
+
+\end{document}
